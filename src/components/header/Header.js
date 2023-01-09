@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import style from './Header.module.css'
 import Logo from '../../assets/Logo-White.png'
-import { useLocation } from 'react-router-dom'
+import { useLocation , useNavigate } from 'react-router-dom'
 import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
 
 const Header = () => {
@@ -10,6 +10,11 @@ const Header = () => {
   const location = useLocation();
   const pageMatch = location.pathname.match(/\/(\d+)/);
   const pageActive = pageMatch ? pageMatch[1] : 'home';
+  const nav = useNavigate();
+
+  const handleClick = () => {
+    nav('/');
+  };
 
   useEffect(() => {
     if (pageActive === 'home') {
@@ -21,7 +26,6 @@ const Header = () => {
 
   if (page) {
     return (
-
       <header className={style.header}>
         <img src={Logo} alt='logo' className={style.img} ></img>
       </header>
@@ -30,7 +34,7 @@ const Header = () => {
 
   return (
     <header className={style.header}>
-      <a href='/'><ArrowBackIosOutlinedIcon sx={{ color: "white", marginLeft: '2rem' }}></ArrowBackIosOutlinedIcon></a>
+      <button onClick={handleClick}><ArrowBackIosOutlinedIcon sx={{ color: "white", marginLeft: '2rem' }}></ArrowBackIosOutlinedIcon></button>
     </header>
   )
 

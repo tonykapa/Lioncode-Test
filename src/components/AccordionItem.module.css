@@ -1,0 +1,33 @@
+.lessonul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    
+}
+
+.lessonul h2 {
+    font-size: 13px;
+    color :#707070;
+    font-weight: 400;
+}
+
+.lesson-info{
+    font-size : 13px;
+    color :#707070;
+    display: flex;
+    gap: 5px;
+}
+
+.lesson-info img {
+    position: relative;
+    top: 1px;
+}
+
+.lessonul li {
+    height : 67px;
+    border-bottom: solid 1px #C5C5C5;
+}
+
+.lessonliwrapper{
+    margin-left : 3%;
+}
